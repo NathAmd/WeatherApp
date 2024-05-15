@@ -79,7 +79,7 @@ overflow: hidden;
             width: 75%;
             margin-bottom: 1em;
             border-radius: 1em;
-            border: solid 0.1em;
+            border: solid 0.1em var(--color);
             background-color: rgb(10,10,10,0.1);
 
             font-size: 1.5em;
@@ -88,6 +88,7 @@ overflow: hidden;
         }
 
         button {
+            border: solid 0.1em var(--color);
             height: 2.5em;
             width: 50%;
             border-radius: 1em;

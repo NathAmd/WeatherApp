@@ -133,13 +133,14 @@ main .module-section .module input {
   width: 75%;
   margin-bottom: 1em;
   border-radius: 1em;
-  border: solid 0.1em;
+  border: solid 0.1em var(--color);
   background-color: rgba(10, 10, 10, 0.1);
   font-size: 1.5em;
   color: var(--color);
   text-align: center;
 }
 main .module-section .module button {
+  border: solid 0.1em var(--color);
   height: 2.5em;
   width: 50%;
   border-radius: 1em;
