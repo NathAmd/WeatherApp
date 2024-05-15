@@ -81,10 +81,11 @@ main .module-section {
   flex-wrap: wrap;
   overflow-y: scroll;
   max-height: 100%;
+  justify-content: space-around;
 }
 main .module-section .module {
   width: 100%;
-  max-width: 25em;
+  max-width: 35em;
   text-align: center;
   border-radius: 1em;
   margin-left: 5vw;
@@ -150,6 +151,9 @@ main .module-section .module button {
 }
 main .module-section .module.module-add {
   margin-bottom: 10em;
+}
+main .module-section .module.module-title {
+  min-width: 90vw;
 }
 main .module-section .module .module-remove {
   position: relative inherit;

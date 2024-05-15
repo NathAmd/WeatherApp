@@ -1,6 +1,8 @@
 import { getDay } from "../module/Time.js"
 import { Get, Set } from "./LocalStorage.js"
 import { removeButton } from "../module/AddModule.js"
+import { addModuleText } from "../module/WeatherModule.js"
+
 
 
 
@@ -51,13 +53,17 @@ function addCity(obj, city) {
         let currentCity =  city == correctCity ? true : false
 
         let zone = document.querySelector("#moduleZone");
-    
+
         let module = document.createElement("section")
         module.classList.add("module")
 
-    
-        let title = document.createElement("h2")
-        title.textContent = city;
+        zone.insertBefore(module, currentCity ? zone.firstElementChild : zone.lastElementChild);
+
+        if (!currentCity) {
+            let title = document.createElement("h2")
+            title.textContent = city;
+            module.appendChild(title)
+        }
 
         let table = CreateTable("module-table")
 
@@ -71,7 +77,7 @@ function addCity(obj, city) {
         }
 
 
-        module.appendChild(title)
+        
         module.appendChild(table)
 
 
@@ -82,9 +88,11 @@ function addCity(obj, city) {
             remove.classList.add('module-remove')
             remove.innerHTML = '<span class="material-symbols-outlined">delete</span>'
             module.appendChild(remove)
+        } else {
+            zone.insertBefore(addModuleText("City"), module.nextSibling)
         }
 
-        zone.insertBefore(module, currentCity ? zone.firstElementChild : zone.lastElementChild);
+        
     }
 }
 
