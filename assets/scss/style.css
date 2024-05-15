@@ -1,0 +1,157 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --background: rgb(94, 164, 239);
+  --color: rgb(250, 250, 250);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--color);
+  transition: background-color 0.1s;
+  overflow: hidden;
+}
+
+span {
+  vertical-align: middle;
+}
+
+header {
+  width: 100vw;
+  height: 21vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+header .header-info {
+  padding-left: 10vw;
+  width: 70%;
+}
+header .header-info .header-city, header .header-info .header-temp, header .header-info .header-time {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+header .header-info .header-temp {
+  font-size: 15vw;
+  font-weight: 10;
+}
+header .header-info .header-city {
+  font-size: 6vw;
+  font-weight: 800;
+}
+header .header-info .header-city .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
+}
+header .header-info .header-time {
+  font-size: 5vw;
+}
+header .header-logo {
+  text-align: center;
+  width: 30%;
+}
+header .header-logo .header-logo-temp {
+  font-size: 20vw;
+}
+
+main {
+  width: 100vw;
+  height: 79vh;
+  overflow: hidden;
+}
+main .module-section {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  max-height: 100%;
+}
+main .module-section .module {
+  width: 100%;
+  max-width: 25em;
+  text-align: center;
+  border-radius: 1em;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: rgba(245, 245, 245, 0.2);
+}
+main .module-section .module .material-symbols-outlined {
+  font-size: 2em;
+}
+main .module-section .module h2 {
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 2.5em;
+}
+main .module-section .module .module-table {
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.2em;
+}
+main .module-section .module .module-table .material-symbols-outlined {
+  font-size: 1.5em;
+}
+main .module-section .module .module-table td {
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+main .module-section .module .module-table .case_0 {
+  width: 30%;
+  text-align: left;
+  font-weight: 1000;
+}
+main .module-section .module .module-table .case_4, main .module-section .module .module-table .case_5 {
+  font-weight: 1000;
+}
+main .module-section .module .form-add-city {
+  visibility: hidden;
+  position: absolute;
+}
+main .module-section .module input {
+  height: 2.5em;
+  width: 75%;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  border: solid 0.1em;
+  background-color: rgba(10, 10, 10, 0.1);
+  font-size: 1.5em;
+  color: var(--color);
+  text-align: center;
+}
+main .module-section .module button {
+  height: 2.5em;
+  width: 50%;
+  border-radius: 1em;
+  background-color: rgba(10, 10, 10, 0.1);
+  font-size: 1.2em;
+  color: var(--color);
+}
+main .module-section .module.module-add {
+  margin-bottom: 10em;
+}
+main .module-section .module .module-remove {
+  position: relative inherit;
+  width: 25%;
+  margin-top: 1.5em;
+}/*# sourceMappingURL=style.css.map */

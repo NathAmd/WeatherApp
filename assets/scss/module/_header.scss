@@ -1,0 +1,61 @@
+header {
+    width: 100vw;
+    height: 21vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    //background-color: aqua;
+
+
+
+    padding: {
+        top: 2em;
+        bottom: 1em;
+    };
+
+    .header-info{
+        padding-left: 10vw;
+        width: 70%;
+
+        .header-city,.header-temp,.header-time{
+            margin: {
+                top: 0.1em;
+                bottom: 0.1em;
+            }
+        }
+
+        .header-temp {
+            font-size: 15vw;
+            font-weight: 10;
+        }
+
+        .header-city {
+            font-size: 6vw;
+            font-weight: 800;
+
+            .material-symbols-outlined {
+                    font-variation-settings:
+                        'FILL' 0,
+                        'wght' 600,
+                        'GRAD' 0,
+                        'opsz' 24
+                }
+        }
+
+        .header-time {
+            font-size: 5vw;
+        }
+    }
+
+    .header-logo {
+        text-align: center;
+        width: 30%;
+
+        .header-logo-temp {
+            font-size: 20vw;
+        }
+    }
+
+}
