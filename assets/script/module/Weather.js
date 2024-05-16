@@ -1,7 +1,7 @@
 import { getDay } from "../module/Time.js"
 import { Get, Set } from "./LocalStorage.js"
 import { removeButton } from "../module/AddModule.js"
-import { addModuleText } from "../module/WeatherModule.js"
+import { addModuleText, addModuleComment, addModuleSunnyTime, addModuleOther } from "../module/WeatherModule.js"
 
 
 
@@ -48,7 +48,7 @@ function addCity(obj, city) {
     if (obj.cod == "200") {
         console.log(obj)
         let tempCity = Get("currentCity", null);
-        let correctCity = tempCity.address.town ? tempCity.address.town : tempCity.address.city
+        let correctCity = tempCity.address.town ? tempCity.address.town : tempCity.address.city ? tempCity.address.city : tempCity.address.village
 
         let currentCity =  city == correctCity ? true : false
 
@@ -72,7 +72,7 @@ function addCity(obj, city) {
 
         let i = 0
         for (const x of grp) {
-            table.appendChild(CreateLigne([i == 0 ? "Today" : getDay(x.day), '<span class="material-symbols-outlined">humidity_percentage</span> ' + Math.round(x.humidity) + "%", '<span class="material-symbols-outlined">' + getWithearIcon(x.lg_before) + '</span>', '<span class="material-symbols-outlined">' + getWithearIcon(x.lg_after) + '</span>', Math.round(x.temp_min) + "°", Math.round(x.temp_max) + "°"], "Day_" + i))
+            table.appendChild(CreateLigne([i == 0 ? "Today" : getDay(x.day), '<span class="material-symbols-outlined notranslate">humidity_percentage</span> ' + Math.round(x.humidity) + "%", '<span class="material-symbols-outlined notranslate">' + getWithearIcon(x.lg_before) + '</span>', '<span class="material-symbols-outlined notranslate">' + getWithearIcon(x.lg_after) + '</span>', Math.round(x.temp_min) + "°", Math.round(x.temp_max) + "°"], "Day_" + i))
             i++
         }
 
@@ -86,10 +86,13 @@ function addCity(obj, city) {
             remove.dataset.city = city
             remove.addEventListener('click', removeButton)
             remove.classList.add('module-remove')
-            remove.innerHTML = '<span class="material-symbols-outlined">delete</span>'
+            remove.innerHTML = '<span class="material-symbols-outlined notranslate">delete</span>'
             module.appendChild(remove)
         } else {
             zone.insertBefore(addModuleText("City"), module.nextSibling)
+            //zone.insertBefore(addModuleOther(obj), module.nextSibling)
+            //zone.insertBefore(addModuleSunnyTime(obj), module.nextSibling)
+            zone.insertBefore(addModuleComment(obj), module.nextSibling)
         }
 
         
@@ -142,7 +145,7 @@ function getFiveDay(array) {
             if (date.getHours() < 12) {
                 newArray[newArray.length - 1].lg_before = x.weather[0].main;
             } else {
-                newArray[newArray.length - 1].lg_after = x.weather[0].main;
+                newArray[newArray.length - 1].lg_after = x.weather[0].main == "Clear" ? "ClearNight" : x.weather[0].main;
             }
         }
 
@@ -166,7 +169,9 @@ function getWithearIcon(weather) {
         case "Clear":
             return "sunny"
             break;
-    
+        case "ClearNight":
+            return "clear_night"
+            break;
         default:
             console.log(weather)
             return "report"

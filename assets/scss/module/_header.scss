@@ -1,10 +1,10 @@
 header {
-    width: 100vw;
-    height: 21vh;
+    max-width: 100vw;
+    height: clamp(5vh,50vw,27vh);
 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    //flex-direction: row;
+    justify-content: space-evenly;
 
     //background-color: aqua;
 
@@ -16,8 +16,8 @@ header {
     };
 
     .header-info{
-        padding-left: 10vw;
-        width: 70%;
+        //padding-left: 1vw;
+        max-width: 70%;
 
         .header-city,.header-temp,.header-time{
             margin: {
@@ -27,12 +27,12 @@ header {
         }
 
         .header-temp {
-            font-size: 15vw;
+            font-size: clamp(0px,15vw,3em);
             font-weight: 10;
         }
 
         .header-city {
-            font-size: 6vw;
+            font-size: clamp(0px,6vw,2em);
             font-weight: 800;
 
             .material-symbols-outlined {
@@ -45,16 +45,16 @@ header {
         }
 
         .header-time {
-            font-size: 5vw;
+            font-size: clamp(0px, 5vw, 1.5em);
         }
     }
 
     .header-logo {
         text-align: center;
-        width: 30%;
+        max-width: 30%;
 
         .header-logo-temp {
-            font-size: 20vw;
+            font-size: clamp(0px, 20vw, 8em);
         }
     }
 
