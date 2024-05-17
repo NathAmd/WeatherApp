@@ -9,5 +9,8 @@ WeatherApp is an intuitive and aesthetically pleasing weather application that p
 - Ability to add multiple cities.
 - Dynamic color change while scrolling.
 
+## Optimization
+More optimization on mobile (F12 and choose mobile dimension)
+
 ## Url
 https://nathamd.github.io/WeatherApp/
