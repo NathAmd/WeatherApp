@@ -1,14 +1,15 @@
 export function getDay(nbr) {
-    nbr = nbr < 0 ? 6-nbr : nbr
-    let day = ["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"];
-    return day[nbr];
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return days[(nbr < 0 ? 6 - nbr : nbr) % 7];
 }
 
 export function GetTime() {
-    let date = new Date();
-    return getDay(date.getDay()) + ", " + correctZero(date.getHours()) + ":" + correctZero(date.getMinutes());
+    const date = new Date();
+    const hours = correctZero(date.getHours());
+    const minutes = correctZero(date.getMinutes());
+    return `${getDay(date.getDay())}, ${hours}:${minutes}`;
 }
 
 function correctZero(nbr) {
-    return nbr < 10 ? "0" + nbr : nbr
+    return nbr < 10 ? `0${nbr}` : nbr.toString();
 }
